@@ -1,9 +1,12 @@
 package org.example.masterlistas;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.InputType;
+import android.transition.Slide;
+import android.transition.Transition;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -38,8 +41,11 @@ public class InicioSesionActivity extends AppCompatActivity {
 
     public void acceder(View view) {
         Intent intent = new Intent(this, ListasActivity.class);
-        startActivity(intent);
+        // Override animation exit transition explode
+//        setupWindowAnimations();
+        startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
     }
+
 
     public void borrarCampos(View view) {
         EditText usuario = (EditText) findViewById(R.id.usuario);
@@ -47,5 +53,12 @@ public class InicioSesionActivity extends AppCompatActivity {
         usuario.setText("");
         contraseña.setText("");
         usuario.requestFocus();
+
+    }
+
+    private void setupWindowAnimations() {
+        Transition slide = new Slide();
+        slide.setDuration(300);
+        getWindow().setExitTransition(slide);
     }
 }
