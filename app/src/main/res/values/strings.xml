@@ -6,4 +6,12 @@
     <!--Transición-->
     <string name="transition_name_img">transition:IMG</string>
     <string name="transition_name_boton">transition:FAB</string>
+
+    <string name="photo">Photo</string>
+    <string name="recording">Recording</string>
+    <string name="refresh">Refresh</string>
+    <string name="reminder">Reminder</string>
+    <string name="search">Search</string>
+    <string name="shared">Shared</string>
+    <string name="createnote">Create note</string>
 </resources>
