@@ -1,7 +1,9 @@
 package org.example.masterlistas;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
@@ -17,10 +19,16 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.transition.Transition;
 import android.transition.TransitionInflater;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.analytics.FirebaseAnalytics;
+import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
+import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings;
 import com.mxn.soul.flowingdrawer_core.ElasticDrawer;
 import com.mxn.soul.flowingdrawer_core.FlowingDrawer;
 
@@ -36,10 +44,19 @@ public class ListasActivity extends AppCompatActivity
 
     private FlowingDrawer mDrawer;
 
+    private FirebaseAnalytics analytics;
+
+
+    private FirebaseRemoteConfig remoteConfig;
+    private static final int CACHE_TIME_SECONDS = 30; // 30 segundos para pruebas
+
+    //    private static final int CACHE_TIME_SECONDS = 3600; // 10 HORAS
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listas);
+
+        analytics = FirebaseAnalytics.getInstance(this);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -121,11 +138,55 @@ public class ListasActivity extends AppCompatActivity
             }
         });
 
+        //        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,
+//                drawer, toolbar, R.string.drawer_open, R.string.drawer_close);
+//        drawer.addDrawerListener(toggle);
+
+        mDrawer.setOnDrawerStateChangeListener(new ElasticDrawer.OnDrawerStateChangeListener() {
+                                                   @Override
+                                                   public void onDrawerStateChange(int oldState, int newState) {
+                                                       if (newState == ElasticDrawer.STATE_OPEN) {
+                                                           Log.i("MainActivity", "Drawer STATE_OPEN");
+
+                                                           Bundle bundle = new Bundle();
+//                bundle.putString(FirebaseAnalytics.Param.ITEM_ID, "app");
+                                                           bundle.putString("accion", "open");
+                                                           bundle.putLong("pulsacion_ms", 34);
+//                bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, "text/html");
+                                                           analytics.logEvent("NavDrawer", bundle);
+                                                       }
+                                                   }
+
+                                                   @Override
+                                                   public void onDrawerSlide(float openRatio, int offsetPixels) {
+                                                   }
+                                               }
+        );
+
 
         Transition lista_enter = TransitionInflater.from(this)
                 .inflateTransition(R.transition.transition_lista_enter);
         getWindow().setEnterTransition(lista_enter);
 
+
+        remoteConfig = FirebaseRemoteConfig.getInstance();
+        FirebaseRemoteConfigSettings config = new FirebaseRemoteConfigSettings.Builder().setDeveloperModeEnabled(BuildConfig.DEBUG).build();
+        remoteConfig.setConfigSettings(config);
+        remoteConfig.setDefaults(R.xml.remote_config);
+        remoteConfig.fetch(CACHE_TIME_SECONDS).addOnCompleteListener(this, new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if (task.isSuccessful()) {
+                    Toast.makeText(ListasActivity.this, "Fetch OK", Toast.LENGTH_SHORT).show();
+                    remoteConfig.activateFetched();
+                } else {
+                    Toast.makeText(ListasActivity.this, "Fetch ha fallado", Toast.LENGTH_SHORT).show();
+                }
+                boolean navigationAbiertoPrimeraVez = remoteConfig.getBoolean("navigation_drawer_abierto");
+
+                abrePrimeraVez(navigationAbiertoPrimeraVez);
+            }
+        });
     }
 
     //
@@ -162,6 +223,22 @@ public class ListasActivity extends AppCompatActivity
             mDrawer.closeMenu();
         } else {
             super.onBackPressed();
+        }
+    }
+
+    public void abrePrimeraVez(boolean abrirNavigationDrawerPrimeraVez) {
+        SharedPreferences sp = getSharedPreferences("mispreferencias", 0);
+        boolean primerAcceso = sp.getBoolean("abrePrimeraVez", true);
+        if (primerAcceso) {
+            if (abrirNavigationDrawerPrimeraVez) {
+                mDrawer.openMenu();
+                analytics.setUserProperty( "experimento_nav_drawer", "abierto" );
+            } else {
+                analytics.setUserProperty( "experimento_nav_drawer", "cerrado" );
+            }
+
+            SharedPreferences.Editor e = sp.edit();
+            e.putBoolean("abrePrimeraVez", false).commit();
         }
     }
 }
