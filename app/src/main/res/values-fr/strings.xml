@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">"MasterListes"</string>
+    <!-- Navigation Drawer -->
+    <string name="drawer_open">"navigation drawer ouvert "</string>
+    <string name="drawer_close">"navigation drawer fermé"</string>
+
+    <!-- Menu en Fab -->
+    <string name="photo">"Ajouter une photo"</string>
+    <string name="recording">"Enregistrement"</string>
+    <string name="refresh">"Rafraichir"</string>
+    <string name="reminder">"Rappeler"</string>
+    <string name="search">"Recherche"</string>
+    <string name="shared">"Partager"</string>
+    <string name="createnote">"Notez"</string>
+
+    <string name="iniciar_sesion">"Commencer la session"</string>
+    <string name="nombre_usuario">"Nom d'utilisateur ou e"</string>
+    <string name="password">"Mot de passe"</string>
+    <string name="recordarme">"Ne pas oublier"</string>
+    <string name="show_password">"Afficher le mot de passe"</string>
+    <string name="iniciar_sesion_facebook">"Connectez-vous avec Facebook"</string>
+    <string name="iniciar_sesion_google">"Connectez-vous avec Google"</string>
+    <string name="contrasena_olvidada">"J'ai oublié mon mot de passe"</string>
+    <string name="registrarme_aplicacion">"JE VEUX POUR VOUS INSCRIRE DANS LA MISE EN ŒUVRE"</string>
+    <string name="borrar">"Effacer"</string>
+    <string name="recordar_datos_usuario">"Rappelez-vous les données de l'utilisateur: "</string>
+    <string name="elementos">"Éléments:"</string>
+    <string name="se_presiono_fab">"Il appuya sur le FAB"</string>
+    <string name="trabajo">"Travail"</string>
+    <string name="personal">"Privé"</string>
+    <string name="fetch_ok">"OK Fetch"</string>
+    <string name="fetch_ko">"Échec de l'extraction"</string>
+    <string name="he_elegido">"Mon choix"</string>
+    <string name="opcion1">"Option 1"</string>
+    <string name="opcion2">"option 2"</string>
+    <string name="opcion3">"option 3"</string>
+    <string name="acciones_adicionales">"Actions supplémentaires"</string>
+    <string name="preferencias">"Préférences"</string>
+    <string name="compartir">"Partager"</string>
+    <string name="registrar_usuario">"Utilisateur enregistré"</string>
+    <string name="alta_usuario">"Haute utilisateur"</string>
+    <string name="listas_disponibles_master_listas">"listes MasterListas disponibles dans l'application"</string>
+    <string name="listas">"listes"</string>
+</resources>

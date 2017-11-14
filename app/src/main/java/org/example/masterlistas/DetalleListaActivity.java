@@ -30,10 +30,10 @@ public class DetalleListaActivity extends AppCompatActivity {
 
         ImageView imageView = (ImageView) findViewById(R.id.imagen);
         if (numeroLista == 0) {
-            toolbar.setTitle("Trabajo");
+            toolbar.setTitle(getString(R.string.trabajo));
             imageView.setImageResource(R.drawable.trabajo);
         } else {
-            toolbar.setTitle("Personal");
+            toolbar.setTitle(getString(R.string.personal));
             imageView.setImageResource(R.drawable.casa);
         }
 
@@ -96,5 +96,5 @@ public class DetalleListaActivity extends AppCompatActivity {
     }
 
     public void accionFab(View view) {
-        Toast.makeText(this, "Ha elegido " + ((TextView) view).getText().toString(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, getString(R.string.he_elegido) + ((TextView) view).getText().toString(), Toast.LENGTH_SHORT).show();
     } }

@@ -59,14 +59,14 @@ public class ListasActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Se presionó el FAB", Snackbar.LENGTH_LONG).show();
+                Snackbar.make(view, R.string.se_presiono_fab, Snackbar.LENGTH_LONG).show();
             }
         });
 
         //Inicializar los elementos
         List items = new ArrayList();
-        items.add(new Lista(R.drawable.trabajo, "Trabajo", 2));
-        items.add(new Lista(R.drawable.casa, "Personal", 3));
+        items.add(new Lista(R.drawable.trabajo, getString(R.string.trabajo), 2));
+        items.add(new Lista(R.drawable.casa, getString(R.string.personal), 3));
         // Obtener el Recycler
         recycler = (RecyclerView) findViewById(R.id.reciclador);
         recycler.setHasFixedSize(true);
@@ -74,7 +74,7 @@ public class ListasActivity extends AppCompatActivity
         lManager = new LinearLayoutManager(this);
         recycler.setLayoutManager(lManager);
         // Crear un nuevo adaptador
-        adapter = new ListaAdapter(items);
+        adapter = new ListaAdapter(items, getBaseContext());
         recycler.setAdapter(adapter);
 
         recycler.addOnItemTouchListener(
@@ -174,10 +174,10 @@ public class ListasActivity extends AppCompatActivity
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()) {
-                    Toast.makeText(ListasActivity.this, "Fetch OK", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ListasActivity.this, R.string.fetch_ok, Toast.LENGTH_SHORT).show();
                     remoteConfig.activateFetched();
                 } else {
-                    Toast.makeText(ListasActivity.this, "Fetch ha fallado", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ListasActivity.this, R.string.fetch_ko, Toast.LENGTH_SHORT).show();
                 }
                 boolean navigationAbiertoPrimeraVez = remoteConfig.getBoolean("navigation_drawer_abierto");
 

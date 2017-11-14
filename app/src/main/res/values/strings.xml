@@ -1,12 +1,13 @@
 <resources>
-    <string name="app_name">MasterListas</string>
+    <string name="app_name">MasterLists</string>
     <!-- Navigation Drawer -->
-    <string name="drawer_open">navigation drawer abierto</string>
-    <string name="drawer_close">navigation drawer cerrado</string>
-    <!--Transición-->
+    <string name="drawer_open">navigation drawer open</string>
+    <string name="drawer_close">navigation drawer close</string>
+    <!--Transicion-->
     <string name="transition_name_img">transition:IMG</string>
     <string name="transition_name_boton">transition:FAB</string>
 
+    <!-- Menu en Fab -->
     <string name="photo">Photo</string>
     <string name="recording">Recording</string>
     <string name="refresh">Refresh</string>
@@ -14,18 +15,33 @@
     <string name="search">Search</string>
     <string name="shared">Shared</string>
     <string name="createnote">Create note</string>
-    <string name="title_activity_login">Sign in</string>
 
-    <!-- Strings related to login -->
-    <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password (optional)</string>
-    <string name="action_sign_in">Sign in or register</string>
-    <string name="action_sign_in_short">Sign in</string>
-    <string name="error_invalid_email">This email address is invalid</string>
-    <string name="error_invalid_password">This password is too short</string>
-    <string name="error_incorrect_password">This password is incorrect</string>
-    <string name="error_field_required">This field is required</string>
-    <string name="permission_rationale">"Contacts permissions are needed for providing email
-        completions."
-    </string>
+    <string name="iniciar_sesion">Log in</string>
+    <string name="nombre_usuario">User name or email</string>
+    <string name="password">Password</string>
+    <string name="recordarme">Remember me</string>
+    <string name="show_password">Show Password</string>
+    <string name="iniciar_sesion_facebook">Log in with Facebook</string>
+    <string name="iniciar_sesion_google">Log in with Google</string>
+    <string name="contrasena_olvidada">I FORGOT THE PASSWORD</string>
+    <string name="registrarme_aplicacion">I WANT TO REGISTER</string>
+    <string name="borrar">Clear</string>
+    <string name="recordar_datos_usuario">Remember user:</string>
+    <string name="elementos">Items:</string>
+    <string name="se_presiono_fab">FAB was pressed</string>
+    <string name="trabajo">Work</string>
+    <string name="personal">Personal</string>
+    <string name="fetch_ok">Fetch OK</string>
+    <string name="fetch_ko">Fetch Failed</string>
+    <string name="he_elegido">You have chosen</string>
+    <string name="opcion1">Option 1</string>
+    <string name="opcion2">Option 2</string>
+    <string name="opcion3">Option 3</string>
+    <string name="acciones_adicionales">Aditional accions</string>
+    <string name="preferencias">Preferences</string>
+    <string name="compartir">Share</string>
+    <string name="registrar_usuario">Register</string>
+    <string name="alta_usuario">Sign up</string>
+    <string name="listas_disponibles_master_listas">Aditional lists are available in the aplication MasterLists </string>
+    <string name="listas">Lists</string>
 </resources>

@@ -32,7 +32,7 @@
                 android:layout_height="match_parent"
                 android:layout_margin="16dp"
                 android:gravity="center_vertical"
-                android:text="Listas disponibles en la aplicación Master Listas"
+                android:text="@string/listas_disponibles_master_listas"
                 android:textColor="#fff"
                 android:textSize="18sp" />
 
@@ -46,7 +46,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Listas"
+                    android:text="@string/listas"
                     android:textColor="#fff"
                     android:textSize="18sp"
                     app:layout_collapseMode="pin" />

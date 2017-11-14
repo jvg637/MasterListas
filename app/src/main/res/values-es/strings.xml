@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">MasterListas</string>
+    <!-- Navigation Drawer -->
+    <string name="drawer_open">navigation drawer abierto</string>
+    <string name="drawer_close">navigation drawer cerrado</string>
+
+    <!-- Menu en Fab -->
+    <string name="photo">Añadir Foto</string>
+    <string name="recording">Grabación</string>
+    <string name="refresh">Refrescar</string>
+    <string name="reminder">Recordar</string>
+    <string name="search">Buscar</string>
+    <string name="shared">Compartir</string>
+    <string name="createnote">Crear nota</string>
+
+    <string name="iniciar_sesion">Iniciar sesión</string>
+    <string name="nombre_usuario">Nombre de usuario o correo</string>
+    <string name="password">Contraseña</string>
+    <string name="recordarme">Recordarme</string>
+    <string name="show_password">Mostrar contraseña</string>
+    <string name="iniciar_sesion_facebook">Iniciar sesión con Facebook</string>
+    <string name="iniciar_sesion_google">Iniciar sesión con Google</string>
+    <string name="contrasena_olvidada">HE OLVIDADO MI CONTRASEÑA</string>
+    <string name="registrarme_aplicacion">QUIERO REGISTRARME EN LA APLICACIÓN</string>
+    <string name="borrar">Borrar</string>
+    <string name="recordar_datos_usuario">Recordar datos de usuario: </string>
+    <string name="elementos">Elementos:</string>
+    <string name="se_presiono_fab">Se presionó el FAB</string>
+    <string name="trabajo">Trabajo</string>
+    <string name="personal">Personal</string>
+    <string name="fetch_ok">Fetch OK</string>
+    <string name="fetch_ko">Fetch ha fallado</string>
+    <string name="he_elegido">Ha elegido</string>
+    <string name="opcion1">Opción 1</string>
+    <string name="opcion2">Opción 2</string>
+    <string name="opcion3">Opción 3</string>
+    <string name="acciones_adicionales">Acciones adicionales</string>
+    <string name="preferencias">Preferencias</string>
+    <string name="compartir">Compartir</string>
+    <string name="registrar_usuario">Registrar usuario</string>
+    <string name="alta_usuario">Alta Usuario</string>
+    <string name="listas_disponibles_master_listas">Listas disponibles en la aplicación MasterListas</string>
+    <string name="listas">Listas</string>
+</resources>
