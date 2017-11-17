@@ -1,10 +1,13 @@
-package org.example.masterlistas;
+package org.jvilches.masterlistas;
 
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.transition.Transition;
+import android.transition.TransitionInflater;
 import android.view.View;
+import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -76,6 +79,9 @@ public class DetalleListaActivity extends AppCompatActivity {
             }
         });
 //        materialSheetFab.showFab(translationX, translationY);
+//        Transition shared_lista_enter = TransitionInflater.from(this)
+//                .inflateTransition(R.transition.transition_curva);
+//        getWindow().setSharedElementEnterTransition(shared_lista_enter);
     }
 
     @Override

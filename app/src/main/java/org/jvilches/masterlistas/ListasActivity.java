@@ -1,4 +1,4 @@
-package org.example.masterlistas;
+package org.jvilches.masterlistas;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -90,10 +90,12 @@ public class ListasActivity extends AppCompatActivity
 //                                startActivity(intent);
                                 ActivityOptionsCompat options = ActivityOptionsCompat.
                                         makeSceneTransitionAnimation(ListasActivity.this,
-                                                new Pair<View, String>(v.findViewById(R.id.imagen),
-                                                        getString(R.string.transition_name_img)),
-                                                new Pair<View, String>(ListasActivity.this.findViewById(R.id.fab),
-                                                        getString(R.string.transition_name_boton)));
+                                                new Pair<>(v.findViewById(R.id.imagen),
+                                                        getString(R.string.transition_name_img))
+                                                ,
+                                                new Pair<>(ListasActivity.this.findViewById(R.id.fab),
+                                                        getString(R.string.transition_name_boton))
+                                        );
                                 ActivityCompat.startActivity(ListasActivity.this, intent, options
                                         .toBundle());
                             }

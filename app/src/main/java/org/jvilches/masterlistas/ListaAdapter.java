@@ -1,4 +1,4 @@
-package org.example.masterlistas;
+package org.jvilches.masterlistas;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -7,8 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import org.example.masterlistas.R;
 
 import java.util.List;
 

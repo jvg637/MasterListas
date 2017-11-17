@@ -1,94 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<android.support.design.widget.CoordinatorLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/detail_toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/colorPrimary"
-        android:title=""
-        android:titleTextColor="#fff"
-        app:layout_collapseMode="pin">
-
-        <ImageView
-            android:id="@+id/imagen"
-            android:layout_width="70dp"
-            android:layout_height="match_parent"
-            android:layout_alignParentStart="true"
-            android:layout_margin="3dp"
-            android:layout_marginLeft="36dp"
-            android:scaleType="fitCenter"
-            android:src="@drawable/trabajo"
-            android:transitionName="@string/transition_name_img" />
-    </android.support.v7.widget.Toolbar>
-    <!--<android.support.design.widget.FloatingActionButton--> <!--android:id="@+id/fab"--> <!--android:layout_width="wrap_content"--> <!--android:layout_height="wrap_content"--> <!--android:layout_margin="16dp"--> <!--android:clickable="true"--> <!--android:src="@drawable/fab_plus"--> <!--app:elevation="6dp"--> <!--app:layout_constraintRight_toRightOf="parent"--> <!--app:layout_constraintBottom_toBottomOf="parent"--> <!--android:transitionName="@string/transition_name_boton"--> <!--app:rippleColor="#616161" />--> <!-- Your FAB implementation -->
-    <org.example.masterlistas.Fab
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:clickable="true"
-        android:src="@drawable/fab_plus"
-        android:transitionName="@string/transition_name_boton"
-        app:elevation="6dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent" /> <!-- Overlay that dims the screen -->
-    <com.gordonwong.materialsheetfab.DimOverlayFrameLayout
-        android:id="@+id/dim_overlay"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" /> <!-- Circular reveal container for the sheet -->
-    <io.codetail.widget.RevealLinearLayout
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="end|bottom"
-        android:orientation="vertical"> <!-- Sheet that contains your items -->
-        <android.support.v7.widget.CardView
-            android:id="@+id/fab_sheet"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/detail_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            android:title=""
+            android:titleTextColor="#fff"
+            app:layout_collapseMode="pin">
+
+            <ImageView
+                android:id="@+id/imagen"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_margin="3dp"
+                android:layout_marginLeft="36dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/trabajo"
+                android:transitionName="@string/transition_name_img" />
+        </android.support.v7.widget.Toolbar>
+        <!--<android.support.design.widget.FloatingActionButton--> <!--android:id="@+id/fab"--> <!--android:layout_width="wrap_content"--> <!--android:layout_height="wrap_content"--> <!--android:layout_margin="16dp"--> <!--android:clickable="true"--> <!--android:src="@drawable/fab_plus"--> <!--app:elevation="6dp"--> <!--app:layout_constraintRight_toRightOf="parent"--> <!--app:layout_constraintBottom_toBottomOf="parent"--> <!--android:transitionName="@string/transition_name_boton"--> <!--app:rippleColor="#616161" />--> <!-- Your FAB implementation -->
+        <org.jvilches.masterlistas.Fab
+            android:id="@+id/fab"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" > <!-- TODO: Put your sheet items here -->
-            <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:clickable="true"
+            android:src="@drawable/fab_plus"
+            android:transitionName="@string/transition_name_boton"
+            app:elevation="6dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent" /> <!-- Overlay that dims the screen -->
+        <com.gordonwong.materialsheetfab.DimOverlayFrameLayout
+            android:id="@+id/dim_overlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/><!-- Circular reveal container for the sheet -->
+        <io.codetail.widget.RevealLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="end|bottom"
+            android:orientation="vertical"> <!-- Sheet that contains your items -->
+            <android.support.v7.widget.CardView
+                android:id="@+id/fab_sheet"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"> <!-- Recording -->
-                <TextView
-                    android:id="@+id/fab_sheet_item_recording"
-                    style="@style/TextAppearance.MaterialSheetFab.Sheet.Item"
-                    android:drawableLeft="@drawable/ic_mic_grey600_24dp"
-                    android:drawableStart="@drawable/ic_mic_grey600_24dp"
-                    android:onClick="accionFab"
-                    android:text="@string/recording" /> <!-- Reminder -->
-                <TextView
-                    android:id="@+id/fab_sheet_item_reminder"
-                    style="@style/TextAppearance.MaterialSheetFab.Sheet.Item"
-                    android:drawableLeft="@drawable/ic_access_alarms_grey600_24dp"
-                    android:drawableStart="@drawable/ic_access_alarms_grey600_24dp"
-                    android:onClick="accionFab"
-                    android:text="@string/reminder" /> <!-- Photo -->
-                <TextView
-                    android:id="@+id/fab_sheet_item_photo"
-                    style="@style/TextAppearance.MaterialSheetFab.Sheet.Item"
-                    android:drawableLeft="@drawable/ic_photo_camera_grey600_24dp"
-                    android:drawableStart="@drawable/ic_photo_camera_grey600_24dp"
-                    android:onClick="accionFab"
-                    android:text="@string/photo" /> <!-- Note -->
+                android:layout_height="wrap_content"> <!-- TODO: Put your sheet items here -->
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@color/colorAccent">
-
+                    android:orientation="vertical"> <!-- Recording -->
                     <TextView
-                        android:id="@+id/fab_sheet_item_note"
+                        android:id="@+id/fab_sheet_item_recording"
                         style="@style/TextAppearance.MaterialSheetFab.Sheet.Item"
-                        android:drawableLeft="@drawable/ic_create_grey600_24dp"
-                        android:drawableStart="@drawable/ic_create_grey600_24dp"
+                        android:drawableLeft="@drawable/ic_mic_grey600_24dp"
+                        android:drawableStart="@drawable/ic_mic_grey600_24dp"
                         android:onClick="accionFab"
-                        android:text="@string/createnote" />
+                        android:text="@string/recording" /> <!-- Reminder -->
+                    <TextView
+                        android:id="@+id/fab_sheet_item_reminder"
+                        style="@style/TextAppearance.MaterialSheetFab.Sheet.Item"
+                        android:drawableLeft="@drawable/ic_access_alarms_grey600_24dp"
+                        android:drawableStart="@drawable/ic_access_alarms_grey600_24dp"
+                        android:onClick="accionFab"
+                        android:text="@string/reminder" /> <!-- Photo -->
+                    <TextView
+                        android:id="@+id/fab_sheet_item_photo"
+                        style="@style/TextAppearance.MaterialSheetFab.Sheet.Item"
+                        android:drawableLeft="@drawable/ic_photo_camera_grey600_24dp"
+                        android:drawableStart="@drawable/ic_photo_camera_grey600_24dp"
+                        android:onClick="accionFab"
+                        android:text="@string/photo" /> <!-- Note -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorAccent">
+
+                        <TextView
+                            android:id="@+id/fab_sheet_item_note"
+                            style="@style/TextAppearance.MaterialSheetFab.Sheet.Item"
+                            android:drawableLeft="@drawable/ic_create_grey600_24dp"
+                            android:drawableStart="@drawable/ic_create_grey600_24dp"
+                            android:onClick="accionFab"
+                            android:text="@string/createnote" />
+                    </LinearLayout>
                 </LinearLayout>
-            </LinearLayout>
-        </android.support.v7.widget.CardView>
-    </io.codetail.widget.RevealLinearLayout>
-</android.support.constraint.ConstraintLayout>
+            </android.support.v7.widget.CardView>
+        </io.codetail.widget.RevealLinearLayout>
+    </android.support.constraint.ConstraintLayout>
+</android.support.design.widget.CoordinatorLayout>

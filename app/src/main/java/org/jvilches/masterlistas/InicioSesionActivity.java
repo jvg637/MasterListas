@@ -1,6 +1,5 @@
-package org.example.masterlistas;
+package org.jvilches.masterlistas;
 
-import android.app.Activity;
 import android.app.ActivityOptions;
 import android.content.Intent;
 import android.support.v4.app.ActivityCompat;
@@ -13,8 +12,6 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
-
-import static android.content.Intent.FLAG_ACTIVITY_CLEAR_TOP;
 
 public class InicioSesionActivity extends AppCompatActivity {
 
