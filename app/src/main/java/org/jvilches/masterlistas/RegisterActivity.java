@@ -33,7 +33,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     }
 
-    public void mostrarContraseña(View v) {
+    public void showPassword(View v) {
 
         if (mostrar.isChecked()) {
             contraseña.setInputType(InputType.TYPE_CLASS_TEXT |

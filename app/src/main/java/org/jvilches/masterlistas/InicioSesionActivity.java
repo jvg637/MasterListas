@@ -9,15 +9,19 @@ import android.text.InputType;
 import android.transition.Slide;
 import android.transition.Transition;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import java.util.ArrayList;
 
 public class InicioSesionActivity extends AppCompatActivity {
 
     private static final int LOGIN_ACTIVITY = 10001;
     EditText usuario;
     EditText contraseña;
+    private Button facebook;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,16 +30,24 @@ public class InicioSesionActivity extends AppCompatActivity {
 
         usuario = (EditText) findViewById(R.id.usuario);
         contraseña = (EditText) findViewById(R.id.contraseña);
+
+        facebook = (Button) findViewById(R.id.boton_facebook);
+        facebook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                incrementaIndiceBloqueo();
+            }
+        });
     }
 
     public void loguearCheckbox(View v) {
         CheckBox recordarme = (CheckBox) findViewById(R.id.recordarme);
         String s = getString(R.string.recordar_datos_usuario) +
-                (recordarme.isChecked() ? getString(android.R.string.yes ) : getString(android.R.string.no ));
+                (recordarme.isChecked() ? getString(android.R.string.yes) : getString(android.R.string.no));
         Toast.makeText(this, s, Toast.LENGTH_LONG).show();
     }
 
-    public void mostrarContraseña(View v) {
+    public void showPassword(View v) {
 
         CheckBox mostrar = (CheckBox) findViewById(R.id.mostrar_contraseña);
         if (mostrar.isChecked()) {
@@ -75,7 +87,7 @@ public class InicioSesionActivity extends AppCompatActivity {
 //        startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
         intent.putExtra("usuario", usuario.getText().toString());
         intent.putExtra("contraseña", contraseña.getText().toString());
-        ActivityCompat.startActivityForResult(this, intent, LOGIN_ACTIVITY,  ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
+        ActivityCompat.startActivityForResult(this, intent, LOGIN_ACTIVITY, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
     }
 
     @Override
@@ -92,4 +104,19 @@ public class InicioSesionActivity extends AppCompatActivity {
             acceder(null);
         }
     }
+
+    private ArrayList bloqueo;
+
+    public void incrementaIndiceBloqueo() {
+        bloqueo.add(null);
+    }
+
+    public void incrementaIndiceANR(View view) {
+        try {
+            Thread.sleep(15000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
