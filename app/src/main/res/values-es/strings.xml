@@ -31,12 +31,12 @@
     <string name="fetch_ok">Fetch OK</string>
     <string name="fetch_ko">Fetch ha fallado</string>
     <string name="he_elegido">Ha elegido</string>
-    <string name="opcion1">Opción 1</string>
+    <string name="opcion1">Vídeo Bonificado</string>
     <string name="opcion2">Opción 2</string>
     <string name="opcion3">Opción 3</string>
     <string name="acciones_adicionales">Acciones adicionales</string>
     <string name="preferencias">Preferencias</string>
-    <string name="compartir">Compartir</string>
+    <string name="compartir">Compartir App</string>
     <string name="registrar_usuario">Registrar usuario</string>
     <string name="alta_usuario">Alta Usuario</string>
     <string name="listas_disponibles_master_listas">Listas disponibles en la aplicación MasterListas</string>

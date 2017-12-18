@@ -34,12 +34,12 @@
     <string name="fetch_ok">Fetch OK</string>
     <string name="fetch_ko">Fetch Failed</string>
     <string name="he_elegido">You have chosen</string>
-    <string name="opcion1">Option 1</string>
+    <string name="opcion1">Rewarded Vídeo</string>
     <string name="opcion2">Option 2</string>
     <string name="opcion3">Option 3</string>
     <string name="acciones_adicionales">Aditional accions</string>
     <string name="preferencias">Preferences</string>
-    <string name="compartir">Share</string>
+    <string name="compartir">Share App</string>
     <string name="registrar_usuario">Register</string>
     <string name="alta_usuario">Sign up</string>
     <string name="listas_disponibles_master_listas">Aditional lists are available in the aplication MasterLists </string>
