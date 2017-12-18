@@ -1,5 +1,8 @@
 package org.jvilches.masterlistas;
 
+import android.support.v7.widget.RecyclerView;
+import android.view.GestureDetector;
+
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.GestureDetector;

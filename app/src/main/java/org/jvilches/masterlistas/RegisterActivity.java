@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 
+import org.jvilches.masterlistas.R;
+
 /**
  * Created by jvg63 on 05/11/2017.
  */

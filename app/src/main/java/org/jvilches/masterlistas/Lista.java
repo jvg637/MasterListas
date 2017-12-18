@@ -1,6 +1,4 @@
-package org.jvilches.masterlistas;
-
-/**
+package org.jvilches.masterlistas;/**
  * Created by jvg63 on 01/11/2017.
  */
 

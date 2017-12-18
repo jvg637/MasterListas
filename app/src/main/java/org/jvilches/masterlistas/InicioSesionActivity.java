@@ -1,19 +1,26 @@
 package org.jvilches.masterlistas;
-
 import android.app.ActivityOptions;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.Signature;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.InputType;
 import android.transition.Slide;
 import android.transition.Transition;
+import android.util.Base64;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
+
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 
 public class InicioSesionActivity extends AppCompatActivity {
@@ -27,6 +34,8 @@ public class InicioSesionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio_sesion);
+
+        extraeHash();
 
         usuario = (EditText) findViewById(R.id.usuario);
         contraseña = (EditText) findViewById(R.id.contraseña);
@@ -119,4 +128,20 @@ public class InicioSesionActivity extends AppCompatActivity {
         }
     }
 
+
+    private void extraeHash () {
+        String packageName = getPackageName();
+        try {
+            PackageInfo info = this.getPackageManager()
+                    .getPackageInfo(packageName, PackageManager.GET_SIGNATURES);
+            for (Signature signature : info.signatures) {
+                MessageDigest md = MessageDigest.getInstance("SHA");
+                md.update(signature.toByteArray());
+                Log.d("KeyLog", "KeyHash:"+
+                        Base64.encodeToString(md.digest(), Base64.DEFAULT));
+            }
+        } catch (PackageManager.NameNotFoundException e) {
+        } catch (NoSuchAlgorithmException e) {
+        }
+    }
 }
